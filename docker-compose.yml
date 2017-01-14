@@ -7,5 +7,7 @@ aurora:
   image: mysql:5.6 #aurora is designed to be compatible with innoDB on mysql 5.6
   environment:
     - MYSQL_ROOT_PASSWORD=mysql
+  volumes:
+    - #_VOLUME_MAPPING_#
   ports:
     - "3306:3306"
