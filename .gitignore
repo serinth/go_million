@@ -33,5 +33,7 @@ vendor/
 *.swp
 *.go.swp
 
-# Data files
-data.tsv
+# Binary and Data files
+/data/data.tsv
+/data/data
+go_million

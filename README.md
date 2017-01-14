@@ -27,5 +27,7 @@ This generates data.tsv with 1 million records to be used to import into mysql
 
 ## Available Options ##
 -n Number of rows. Default is 10
+
 -f output filename. Default is `data.tsv`
+
 -d days back to generate last activity date. Default is 10
