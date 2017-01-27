@@ -1,5 +1,11 @@
-service:
-  build: .
+app:
+  image: 'golang:1.7'
+  environment:
+    - GOBIN=/go/bin
+  volumes:
+    - .:/go/src/github.com/serinth/go_million
+  working_dir: /go/src/github.com/serinth/go_million
+  command: scripts/start.sh
   links:
     - "aurora:aurora"
 
@@ -8,6 +14,6 @@ aurora:
   environment:
     - MYSQL_ROOT_PASSWORD=mysql
   volumes:
-    - #_VOLUME_MAPPING_#
+    - ./mysql_data:/var/lib/mysql
   ports:
     - "3306:3306"

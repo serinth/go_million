@@ -3,10 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/Pallinder/go-randomdata"
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/Pallinder/go-randomdata"
 )
 
 var outputFile = flag.String("f", "data.tsv", "output filename")
@@ -35,7 +36,8 @@ func main() {
 
 	for i := 0; i < *numRepetitions; i++ {
 		r := now.AddDate(0, 0, randomdata.Number(*daysBack)*-1)
-		_, err := f.WriteString(strconv.Itoa(i) + "\t" + r.Format("2006-01-02 15:04:05") + "\n")
+		//Only one list L1 and one segment S1
+		_, err := f.WriteString(strconv.Itoa(i) + "\t" + "L1\t" + "S1\t" + r.Format("2006-01-02 15:04:05") + "\n")
 		check(err)
 	}
 	f.Sync()

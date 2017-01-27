@@ -34,6 +34,7 @@ vendor/
 *.go.swp
 
 # Binary and Data files
-/data/data.tsv
-/data/data
+data/data.tsv
+data/data
 go_million
+mysql_data/
