@@ -5,6 +5,8 @@ app:
   volumes:
     - .:/go/src/github.com/serinth/go_million
   working_dir: /go/src/github.com/serinth/go_million
+  ports:
+    - "8080:8080"
   command: scripts/start.sh
   links:
     - "aurora:aurora"

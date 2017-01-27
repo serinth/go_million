@@ -64,3 +64,16 @@ LOAD DATA LOCAL INFILE '/var/lib/mysql-files/data.tsv' INTO TABLE event_activity
 -f output filename. Default is `data.tsv`
 
 -d days back to generate last activity date. Default is 10
+
+# Performance Profiling #
+
+- `--alloc-space` for number of megabytes that have been allocated
+- `--inuse-space` for number of megabytes still in use
+
+```bash
+go tool pprof --alloc_space go_million http://localhost:8080/debug/pprof/heap
+```
+
+Then once in pprof we can use:
+`topk` where k is a number of top memory hogs or just omit it for everything
+`list` to show which lines of code used the most
